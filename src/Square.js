@@ -2,11 +2,12 @@ import React from 'react';
 
  class Square extends React.Component {
 
-    state = { value: ''};
-    // constructor(props) {
-    //     super(props);
-    //     this.state = { value: ''};
-    // }
+    // state = { value: ''};
+    constructor(props) {
+        super(props);
+
+        this.state = { value: null};
+    }
 
     handleClick = () => {
         this.setState(//不能直接改，只能通过setState修改
@@ -16,8 +17,9 @@ import React from 'react';
 
     render() {
         return (
-        <button onClick={this.handleClick} className="square">
-            {this.state.value}
+
+        <button className="square" onClick={() =>{}}>
+            {this.props.value}
         </button>
         );
     }
