@@ -4,8 +4,24 @@ import Square from './Square';
 
 class Board extends React.Component {
 
-    renderSquare(index) {
-        return <Square value={index}/>;
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			squares: Array(9).fill(null)
+		};
+	}
+
+	handleClick = (i) =>{
+		const squares = [{...this.state.squares}];
+		squares[i] = 'X';
+		this.setState({squares});
+	}
+    renderSquare(i) {
+		return <Square 
+		value={this.state.squares[i]} 
+		handleClick={() => this.handleClick(i)}
+		/>;
     }
 
     render() {
