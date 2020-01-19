@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import Square from './Square';
+// import Square from './Square';
 import Board from './Board';
 
 function App() {
